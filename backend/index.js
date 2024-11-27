@@ -8,6 +8,16 @@ import { Chat } from './models/ChatModel.js';
 import { User } from './models/userModel.js';
 import { app,server } from './socket/socket.js';
 import path from "path"
+import cors from 'cors'
+
+
+app.use(cors({
+  origin: 'http://localhost:5173',  // Replace with your frontend's URL if needed
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Add other methods if necessary
+  credentials: true  // If your request includes cookies or authorization headers
+}));
+
+
 
 
 dotenv.config();
